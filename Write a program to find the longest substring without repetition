@@ -1,0 +1,19 @@
+# Write a program to find the longest substring without repetition
+# Input string: “abcdab”
+# Output string:- ‘abcd’ ‘bcda’  ‘cdab’
+
+input_string = "abcdab"
+data_list = []
+data_string = ""
+
+for i in range(len(input_string)):
+    for j in range(i, len(input_string)):
+        if input_string[j] not in data_string:
+            data_string += input_string[j]
+        else:
+            if data_string not in data_list:
+                data_list.append(data_string)
+            data_string = ""
+            break
+data_list.pop()
+print(data_list)
