@@ -1,0 +1,18 @@
+# Reverse a string and it should not change anything on numbers.
+# Input: name123ase
+# Output: eman123esa
+
+input_string = "name123ase"
+data_string = ""
+final_data = ""
+
+for i in range(len(input_string)):
+    if input_string[i].isalpha():
+        data_string += input_string[i]
+    else:
+        final_data += data_string[::-1]
+        data_string = ""
+        if input_string[i].isalnum():
+            final_data += input_string[i]
+final_data += data_string
+print(final_data)
