@@ -1,0 +1,11 @@
+# Create Simple class in python
+
+class Animal:
+    def __init__(self,name):
+        self.name = name
+
+    def speak(self):
+        return f"I am {self.name}"
+
+dog = Animal('dog')
+print(dog.speak())
