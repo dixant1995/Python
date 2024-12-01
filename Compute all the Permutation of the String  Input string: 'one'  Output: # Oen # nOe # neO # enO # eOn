@@ -1,0 +1,33 @@
+# Compute all the Permutation of the String
+#
+# Input string: 'one'
+#
+# Output:
+# Oen
+# nOe
+# neO
+# enO
+# eOn
+
+import itertools
+def compute_permutations(input_string):
+    # Generate all permutations of the input string
+    permutations = itertools.permutations(input_string)
+    list_data = []
+    # Iterate over the permutations and print them with the first letter capitalized
+    for perm in permutations:
+        permstr = ""
+        for data in perm:
+            if data == 'o':
+                value = data.upper()
+                permstr += value
+            else:
+                permstr += data
+        list_data.append(permstr)
+    return list_data
+
+# Input string
+input_string = 'one'
+
+# Compute and print permutations
+print(compute_permutations(input_string))
